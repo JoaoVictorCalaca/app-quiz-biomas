@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Olá, seja bem vindo(a)! 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é um projeto [Expo](https://expo.dev) criado com [`create-expo-app`](https://www.npmjs.com/package/create-expo-app), para a feira de ciências do IF Goiano campus Trindade.
 
 ## Get started
 

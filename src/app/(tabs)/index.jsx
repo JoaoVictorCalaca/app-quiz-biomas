@@ -1,5 +1,5 @@
 import { StyleSheet, Text, Touchable, View, TouchableOpacity, StatusBar, ScrollView } from "react-native";
-import { appColors } from "../util/colors";
+import { appColors } from "../../util/colors";
 import { Link } from "expo-router";
 
 export default function Index() {
