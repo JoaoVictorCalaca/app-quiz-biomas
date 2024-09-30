@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Vibration } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Vibration, Modal } from 'react-native'
 import React, { useState } from 'react'
 import { appColors } from '@/src/util/colors'
 import { quizData } from '@/src/util/quizData'
@@ -37,7 +37,7 @@ const index = () => {
 
     if (option === currentQuestion.correctAnswer) {
       return [styles.bntAnswer, styles.correctAnswer]
-    }else if (option === selectedAnswer) {
+    } else if (option === selectedAnswer) {
       return [styles.bntAnswer, styles.wrongAnswer]
     }
 
@@ -56,11 +56,11 @@ const index = () => {
         {currentQuestion.options.map((option, i) => {
           return (
             <TouchableOpacity
-              key={i.toString()} 
-              style={handleBntColor(option)} 
+              key={i.toString()}
+              style={handleBntColor(option)}
               onPress={() => !hasAnswered && handleAnswer(option)}
               disabled={hasAnswered}
-             >
+            >
               <Text style={styles.h1}>{option}</Text>
             </TouchableOpacity>
           )
@@ -68,13 +68,15 @@ const index = () => {
       </View>
 
       {hasAnswered && (
+        <Modal transparent animationType='slide'>
           <View style={styles.result}>
-            <Text style={styles.h2}>Resposta certa: <Text style={styles.answerMarkedText}>{currentQuestion.correctAnswer}</Text></Text>
-            <TouchableOpacity style={styles.nextQuestionBtn} onPress={()=> handleNextQuestion()}>
-              <Text style={[styles.h2, { textAlign: 'center' }]}>Próxima pergunta</Text>
+            <Text style={styles.h1}>Resposta certa: <Text style={styles.answerMarkedText}>{currentQuestion.correctAnswer}</Text></Text>
+            <TouchableOpacity style={styles.nextQuestionBtn} onPress={() => handleNextQuestion()}>
+              <Text style={styles.h1}>Próxima pergunta ▶</Text>
             </TouchableOpacity>
           </View>
-        )}
+        </Modal>
+      )}
     </View>
   )
 }
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
   },
 
   answerMarkedText: {
-    fontSize: 15,
+    fontSize: 25,
     fontWeight: 'bold',
     color: appColors.defaultGreen,
     width: '90%'
@@ -140,7 +142,9 @@ const styles = StyleSheet.create({
 
   result: {
     width: '100%',
+    height: '30%',
     alignSelf: 'center',
+    justifyContent: 'space-between',
     padding: 15,
     backgroundColor: appColors.tertiaryBlue,
     borderTopLeftRadius: 12,
