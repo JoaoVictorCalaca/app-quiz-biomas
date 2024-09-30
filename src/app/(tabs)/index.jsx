@@ -5,13 +5,15 @@ import { Link } from "expo-router";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <StatusBar/>
+      <StatusBar />
 
       <Text style={styles.h1}>Quiz de biomas brasileiros</Text>
 
-      <TouchableOpacity style={styles.btn}>
-        <Text style={styles.btnText}>Jogar!</Text>
-      </TouchableOpacity>
+      <Link href={'/game'} asChild>
+        <TouchableOpacity style={styles.btn}>
+          <Text style={styles.btnText}>Jogar!</Text>
+        </TouchableOpacity>
+      </Link>
 
       <View>
         <Text style={styles.h2}>🏆 ranking de jogadores</Text>
@@ -21,7 +23,7 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     flex: 1,
     alignItems: "center",
     justifyContent: 'space-around',
