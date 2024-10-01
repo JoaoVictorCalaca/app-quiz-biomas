@@ -14,10 +14,6 @@ export default function Index() {
           <Text style={styles.btnText}>Jogar!</Text>
         </TouchableOpacity>
       </Link>
-
-      <View>
-        <Text style={styles.h2}>🏆 ranking de jogadores</Text>
-      </View>
     </View>
   );
 }
@@ -26,9 +22,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: 'space-around',
     backgroundColor: appColors.defaultBlue,
-    padding: 25,
+    paddingHorizontal: 25,
+    paddingVertical: 80,
+    gap: 80
   },
 
   h1: {

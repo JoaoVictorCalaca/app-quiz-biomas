@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Vibration, Modal } from 'reac
 import React, { useState } from 'react'
 import { appColors } from '@/src/util/colors'
 import { quizData } from '@/src/util/quizData'
+import { router } from 'expo-router'
 
 const index = () => {
   const [questionIndex, setQuestionIndex] = useState(0)
@@ -27,6 +28,8 @@ const index = () => {
       setQuestionIndex(questionIndex + 1)
       setHasAnswered(false)
       setSelectedAnswer(null)
+    }else {
+      router.push('/scores')
     }
   }
 
@@ -38,6 +41,16 @@ const index = () => {
     if (option === currentQuestion.correctAnswer) {
       return [styles.bntAnswer, styles.correctAnswer]
     } else if (option === selectedAnswer) {
+      return [styles.bntAnswer, styles.wrongAnswer]
+    }
+
+    return styles.bntAnswer
+  }
+
+  const handleNextQuestionBtn = (selected) => {
+    if (selected === currentQuestion.correctAnswer) {
+      return [styles.bntAnswer, styles.correctAnswer]
+    } else if (selected != currentQuestion.correctAnswer) {
       return [styles.bntAnswer, styles.wrongAnswer]
     }
 
@@ -71,8 +84,8 @@ const index = () => {
         <Modal transparent animationType='slide'>
           <View style={styles.result}>
             <Text style={styles.h1}>Resposta certa: <Text style={styles.answerMarkedText}>{currentQuestion.correctAnswer}</Text></Text>
-            <TouchableOpacity style={styles.nextQuestionBtn} onPress={() => handleNextQuestion()}>
-              <Text style={styles.h1}>Próxima pergunta ▶</Text>
+            <TouchableOpacity style={handleNextQuestionBtn(selectedAnswer)} onPress={() => handleNextQuestion()}>
+              <Text style={[styles.h1, { textAlign: 'center' }]}>Próxima pergunta</Text>
             </TouchableOpacity>
           </View>
         </Modal>
