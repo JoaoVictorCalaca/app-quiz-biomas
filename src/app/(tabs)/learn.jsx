@@ -1,11 +1,14 @@
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground, ScrollView } from 'react-native'
 import React from 'react'
+import CircleScreen from '../../components/CircleScreen'
 
 const learn = () => {
   return (
-    <View>
-      <Text>learn</Text>
-    </View>
+    <ImageBackground source={require('../../images/cerrado.jpg')} resizeMode="cover" style={{ flex: 1 }}>
+      <ScrollView style={{padding: 5}}>
+        <CircleScreen />
+      </ScrollView>
+    </ImageBackground>
   )
 }
 
