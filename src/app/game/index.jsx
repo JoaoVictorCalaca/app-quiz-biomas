@@ -1,26 +1,37 @@
-import { View, Text, StyleSheet, TouchableOpacity, Vibration, Modal } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Vibration, Modal, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { appColors } from '@/src/util/colors'
 import { quizData } from '@/src/util/quizData'
 import { router } from 'expo-router'
+import { Audio } from 'expo-av'
 
 const index = () => {
   const [questionIndex, setQuestionIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [hasAnswered, setHasAnswered] = useState(false)
   const [score, setScore] = useState(0)
+  const [sound, setSound] = useState();
 
   const currentQuestion = quizData[questionIndex]
 
+  const playCorrectSound = async () => {
+    const { sound } = await Audio.Sound.createAsync(
+      require('../../../assets/sounds/sucesso.wav')
+    );
+    setSound(sound);
+    await sound.playAsync();
+  }
+
   const handleAnswer = (option) => {
     setSelectedAnswer(option)
-    setHasAnswered(true)
-    Vibration.vibrate(100)
+
+    handleConfirmAnswer()
   }
 
   const handleNextQuestion = () => {
     if (selectedAnswer === currentQuestion.correctAnswer) {
       setScore(score + 1)
+      playCorrectSound()
       Vibration.vibrate(100)
     }
 
@@ -28,7 +39,7 @@ const index = () => {
       setQuestionIndex(questionIndex + 1)
       setHasAnswered(false)
       setSelectedAnswer(null)
-    }else {
+    } else {
       router.push('/scores')
     }
   }
@@ -55,6 +66,25 @@ const index = () => {
     }
 
     return styles.bntAnswer
+  }
+
+  const handleConfirmAnswer = () => {
+    Alert.alert(
+      "Confirmação",
+      "Você deseja confirmar sua resposta?",
+      [
+        {
+          text: "Não",
+          style: "cancel",
+          onPress: () => {setHasAnswered(false); Vibration.vibrate([100, 300])}
+        },
+        {
+          text: "Sim!",
+          onPress: () => {setHasAnswered(true); Vibration.vibrate(300)}
+        },
+      ],
+      { cancelable: false }
+    );
   }
 
   return (
