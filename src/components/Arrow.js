@@ -19,7 +19,8 @@ export default function Arrow(props) {
     const interactionTypes = {
         predatism: 'red',
         competition: 'orange',
-        mutualism: 'blue'
+        mutualism: 'green',
+        comensalism: 'blue'
     };
 
     const interactionColor = interactionTypes[interaction] || 'black'
