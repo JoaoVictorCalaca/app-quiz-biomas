@@ -7,7 +7,7 @@ export const quizData = [
 
   {
     question: "Qual bioma é caracterizado por vegetação xerófila e clima semiárido?",
-    options: ["Pantanal", "Caatinga", "Cerrado", "Mata Atlântica"],
+    options: ["Cerrado", "Pantanal", "Mata Atlântica", "Caatinga"],
     correctAnswer: "Caatinga",
   },
 
@@ -19,19 +19,19 @@ export const quizData = [
 
   {
     question: "Qual bioma brasileiro é considerado o mais ameaçado devido à urbanização e desmatamento?",
-    options: ["Mata Atlântica", "Pampa", "Amazônia", "Caatinga"],
+    options: ["Pampa", "Mata Atlântica", "Amazônia", "Caatinga"],
     correctAnswer: "Mata Atlântica",
   },
 
   {
     question: "Qual bioma é conhecido por suas planícies e campos naturais?",
-    options: ["Pampa", "Cerrado", "Caatinga", "Pantanal"],
+    options: ["Pampa", "Caatinga", "Pantanal", "Cerrado"],
     correctAnswer: "Pampa",
   },
 
   {
     question: "Em qual bioma predominam espécies adaptadas a altas temperaturas e à seca?",
-    options: ["Cerrado", "Caatinga", "Pantanal", "Pampa"],
+    options: ["Caatinga", "Cerrado", "Pantanal", "Pampa"],
     correctAnswer: "Caatinga",
   },
 
@@ -39,5 +39,24 @@ export const quizData = [
     question: "Qual bioma se destaca por sua vegetação adaptada a solos pobres e incêndios naturais?",
     options: ["Cerrado", "Pampa", "Pantanal", "Mata Atlântica"],
     correctAnswer: "Cerrado",
+  },
+
+  {
+    question: "Qual bioma brasileiro tem a maior variedade de ecossistemas e é responsável pela maior produção de oxigênio no planeta?",
+    options: ["Mata Atlântica", "Amazônia", "Cerrado", "Pantanal"],
+    correctAnswer: "Amazônia",
+  },
+
+  {
+    question: "Qual bioma é famoso por sua vegetação rasteira e grande presença de gramíneas?",
+    options: ["Pantanal", "Amazônia", "Pampa", "Mata Atlântica"],
+    correctAnswer: "Pampa",
+  },
+
+  {
+    question: "Qual bioma é caracterizado por ser uma das maiores áreas úmidas do mundo e possui uma fauna extremamente diversificada?",
+    options: ["Cerrado", "Pantanal", "Caatinga", "Mata Atlântica"],
+    correctAnswer: "Pantanal",
   }
+
 ];

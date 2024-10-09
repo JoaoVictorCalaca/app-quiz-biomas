@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, Vibration, Modal, Alert } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { appColors } from '@/src/util/colors'
 import { quizData } from '@/src/util/quizData'
 import { router } from 'expo-router'
@@ -11,6 +11,24 @@ const index = () => {
   const [hasAnswered, setHasAnswered] = useState(false)
   const [score, setScore] = useState(0)
   const [sound, setSound] = useState();
+  const [gameOver, setGameOver] = useState(false)
+  const [animatedScore, setAnimatedScore] = useState(0);
+
+  useEffect(() => {
+    if (gameOver) {
+      let currentScore = 0;
+      const interval = setInterval(() => {
+        if (currentScore < score) {
+          currentScore += 1;
+          setAnimatedScore(currentScore);
+        } else {
+          clearInterval(interval);
+        }
+      }, 220);
+
+      return () => clearInterval(interval);
+    }
+  }, [gameOver, score]);
 
   const currentQuestion = quizData[questionIndex]
 
@@ -24,7 +42,6 @@ const index = () => {
 
   const handleAnswer = (option) => {
     setSelectedAnswer(option)
-
     handleConfirmAnswer()
   }
 
@@ -40,7 +57,7 @@ const index = () => {
       setHasAnswered(false)
       setSelectedAnswer(null)
     } else {
-      router.push('/scores')
+      setGameOver(true)
     }
   }
 
@@ -55,7 +72,7 @@ const index = () => {
       return [styles.bntAnswer, styles.wrongAnswer]
     }
 
-    return styles.bntAnswer
+    return [styles.bntAnswer, styles.wrongAnswer]
   }
 
   const handleNextQuestionBtn = (selected) => {
@@ -71,16 +88,16 @@ const index = () => {
   const handleConfirmAnswer = () => {
     Alert.alert(
       "Confirmação",
-      "Você deseja confirmar sua resposta?",
+      `Você deseja confirmar sua resposta?`,
       [
         {
           text: "Não",
           style: "cancel",
-          onPress: () => {setHasAnswered(false); Vibration.vibrate([100, 300])}
+          onPress: () => { setHasAnswered(false); Vibration.vibrate([100, 300]) }
         },
         {
           text: "Sim!",
-          onPress: () => {setHasAnswered(true); Vibration.vibrate(300)}
+          onPress: () => { setHasAnswered(true); Vibration.vibrate(300) }
         },
       ],
       { cancelable: false }
@@ -116,6 +133,21 @@ const index = () => {
             <Text style={styles.h1}>Resposta certa: <Text style={styles.answerMarkedText}>{currentQuestion.correctAnswer}</Text></Text>
             <TouchableOpacity style={handleNextQuestionBtn(selectedAnswer)} onPress={() => handleNextQuestion()}>
               <Text style={[styles.h1, { textAlign: 'center' }]}>Próxima pergunta</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
+      )}
+
+      {gameOver && (
+        <Modal animationType='slide'>
+          <View style={[styles.container, { justifyContent: 'space-around', gap: 20 }]}>
+            <View style={{ gap: 40 }}>
+              <Text style={styles.h1}>Fim de jogo! ✅</Text>
+              <Text style={[styles.h1, { fontSize: 40 }]}>Você acertou <Text style={[styles.answerMarkedText, { fontSize: 40 }]}>{animatedScore}/{quizData.length}</Text> perguntas!</Text>
+            </View>
+
+            <TouchableOpacity onPress={() => router.push('/(tabs)')} style={[styles.bntAnswer, styles.correctAnswer]}>
+              <Text style={[styles.h1, { textAlign: 'center' }]}>Voltar ao início</Text>
             </TouchableOpacity>
           </View>
         </Modal>
