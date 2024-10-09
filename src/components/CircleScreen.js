@@ -1,6 +1,6 @@
 import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Arrow from './Arrow';
-import { images } from '../data/initialData';
+import { images } from '../data/initialDataMataAtlantica';
 import { useRef, useState } from "react";
 
 export default function CircleScreen() {
@@ -96,18 +96,18 @@ export default function CircleScreen() {
                             <Text>Predatismo</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
-                            <View style={{width: 10, height: 10, backgroundColor: 'orange', marginHorizontal: 5}}/> 
-                            <Text>Competição</Text>
+                            <View style={{width: 10, height: 10, backgroundColor: 'green', marginHorizontal: 5}}/> 
+                            <Text>Mutualismo</Text>
                         </View>
                     </View>
                     <View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
-                            <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
-                            <Text>Mutualismo</Text>
+                            <View style={{width: 10, height: 10, backgroundColor: 'orange', marginHorizontal: 5}}/> 
+                            <Text>Competição</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
-                            <View style={{width: 10, height: 10, backgroundColor: 'red', marginHorizontal: 5}}/> 
-                            <Text>Predatismo</Text>
+                            <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
+                            <Text>Comensalismo</Text>
                         </View>
                     </View>
                 </View>
