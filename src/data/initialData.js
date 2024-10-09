@@ -3,7 +3,12 @@ export const images = (radius) => {
         {
             id: 1, source: require('../images/jacare.png'), relatedTo: [4, 5], arrowAngulation: [-150, 180], arrowStart: 'LeftSide',
             arrowSize: [(radius * 1.14), (radius * 1.35)], interactions: ['predatism', 'competition'], animal: 'Jacaré',
-            description: 'Jacaré também chamado aligator, são crocodilianos da família Alligatoridae, semelhantes aos crocodilos, dos quais se distinguem pela cabeça mais curta e larga, pela presença de membranas interdigitais (semelhante barbatana) nos polegares das patas traseiras e, com relação à dentição onde o quarto dente canino da mandíbula inferior encaixa em um furo da mandíbula superior, enquanto que nos crocodilos sobressai para fora, quando têm a boca fechada.[3] O tamanho de um jacaré pode variar de 1,2 metros (jacaré-anão) até 5,5 metros (jacaré-açu), podendo pesar de seis a seiscentos quilos. Os jacarés habitam as Américas, tendo desaparecido da Europa na era Plioceno.[carece de fontes] Na América do Norte, ocorre, somente, o gênero Alligator.'
+            description: 'Jacaré também chamado aligator, são crocodilianos da família Alligatoridae, semelhantes aos crocodilos,' +
+            'dos quais se distinguem pela cabeça mais curta e larga, pela presença de membranas interdigitais (semelhante barbatana)' +
+            'nos polegares das patas traseiras e, com relação à dentição onde o quarto dente canino da mandíbula inferior encaixa em um' +
+            'furo da mandíbula superior, enquanto que nos crocodilos sobressai para fora, quando têm a boca fechada.[3] O tamanho de um' +
+            'jacaré pode variar de 1,2 metros (jacaré-anão) até 5,5 metros (jacaré-açu), podendo pesar de seis a seiscentos quilos. Os' +
+            'jacarés habitam as Américas, tendo desaparecido da Europa na era Plioceno.[carece de fontes] Na América do Norte, ocorre, somente, o gênero Alligator.'
         },
 
         {
