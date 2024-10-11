@@ -14,27 +14,38 @@ export default function PantanalCircleScreen() {
         acc[image.id] = new Animated.Value(70)
         return acc
     }, {})).current;
-    const [selectionCircleWidth, setSelectionCircleWidth] = useState(0);
 
     const handleImagePress = (id) => {
-        if (selectedImage === null || selectedImage === id) {
-            setSelectedImage(selectedImage === id ? null : id);
-
-
-            Animated.timing(imageSizes[id], {
-                toValue: selectedImage === id ? 70 : 90,
-                duration: 200,
-                useNativeDriver: false,
-            }).start()
-
-
-            setSelectionCircleWidth((prevWidths) => ({
-                ...prevWidths,
-                [id]: prevWidths[id] === 0 ? 5 : 0, // Alterna entre 0 e 5 para o contorno
-            }));
-        }
+        
+        if (selectedImage !== id) {
+            // Anima a imagem previamente selecionada para diminuir de tamanho (se houver uma selecionada)
+            if (selectedImage !== null) {
+                Animated.timing(imageSizes[selectedImage], {
+                        toValue: 70, // Tamanho original
+                        duration: 200,
+                        useNativeDriver: false,
+                    }).start();
+                }
+                
+                // Seleciona a nova imagem e a anima para aumentar de tamanho
+                setSelectedImage(id);
+                
+                Animated.timing(imageSizes[id], {
+                    toValue: 90, // Tamanho maior quando selecionada
+                    duration: 200,
+                    useNativeDriver: false,
+                }).start();
+            }else {
+                setSelectedImage(selectedImage === id ? null : id);
+            
+                Animated.timing(imageSizes[id], {
+                    toValue: selectedImage === id ? 70 : 90,
+                    duration: 200,
+                    useNativeDriver: false,
+                }).start()
+            }
     };
-
+    
     return (
         <View style={styles.container}>
             <View style={[styles.circle, { width: radius * 2, height: radius * 2 }]}>
@@ -44,7 +55,6 @@ export default function PantanalCircleScreen() {
                     const y = elementRadius * Math.sin(angle);
 
                     const imageSize = imageSizes[image.id] || 70;
-                    const circleWidth = selectionCircleWidth[image.id] || 0;
 
                     return (
                         <View
@@ -174,7 +184,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'center',
         color: 'white',
-        textAlign: 'justify'
+        textAlign: 'left'
     },
 
     alignment: {
