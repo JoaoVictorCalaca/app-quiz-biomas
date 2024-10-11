@@ -8,7 +8,7 @@ export default function Index() {
         <View style={styles.container}>
             <Text style={styles.h1}>Aprenda um pouco sobre a fauna e flora de cada bioma!</Text>
 
-            <Link href="learnFolder/learn" asChild>
+            <Link href="learn/pantanal" asChild>
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.text}>Pantanal</Text>
                     <AntDesign name="rightcircle" size={24} color="white" />
