@@ -1,9 +1,9 @@
 import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Arrow from './Arrow';
-import { images } from '../data/initialData';
+import { images } from '../data/initialDataCerrado';
 import { useRef, useState } from "react";
 
-export default function CircleScreen() {
+export default function CerradoCircleScreen() {
     const { width, height } = Dimensions.get('window');
     const circleSize = Math.min(width, height) * 0.9;
     const radius = circleSize / 2;
@@ -14,27 +14,38 @@ export default function CircleScreen() {
         acc[image.id] = new Animated.Value(70)
         return acc
     }, {})).current;
-    const [selectionCircleWidth, setSelectionCircleWidth] = useState(0);
 
     const handleImagePress = (id) => {
-        if (selectedImage === null || selectedImage === id) {
-            setSelectedImage(selectedImage === id ? null : id);
-
-
-            Animated.timing(imageSizes[id], {
-                toValue: selectedImage === id ? 70 : 90,
-                duration: 200,
-                useNativeDriver: false,
-            }).start()
-
-
-            setSelectionCircleWidth((prevWidths) => ({
-                ...prevWidths,
-                [id]: prevWidths[id] === 0 ? 5 : 0, // Alterna entre 0 e 5 para o contorno
-            }));
-        }
+        
+        if (selectedImage !== id) {
+            // Anima a imagem previamente selecionada para diminuir de tamanho (se houver uma selecionada)
+            if (selectedImage !== null) {
+                Animated.timing(imageSizes[selectedImage], {
+                        toValue: 70, // Tamanho original
+                        duration: 200,
+                        useNativeDriver: false,
+                    }).start();
+                }
+                
+                // Seleciona a nova imagem e a anima para aumentar de tamanho
+                setSelectedImage(id);
+                
+                Animated.timing(imageSizes[id], {
+                    toValue: 90, // Tamanho maior quando selecionada
+                    duration: 200,
+                    useNativeDriver: false,
+                }).start();
+            }else {
+                setSelectedImage(selectedImage === id ? null : id);
+            
+                Animated.timing(imageSizes[id], {
+                    toValue: selectedImage === id ? 70 : 90,
+                    duration: 200,
+                    useNativeDriver: false,
+                }).start()
+            }
     };
-
+    
     return (
         <View style={styles.container}>
             <View style={[styles.circle, { width: radius * 2, height: radius * 2 }]}>
@@ -44,7 +55,6 @@ export default function CircleScreen() {
                     const y = elementRadius * Math.sin(angle);
 
                     const imageSize = imageSizes[image.id] || 70;
-                    const circleWidth = selectionCircleWidth[image.id] || 0;
 
                     return (
                         <View
@@ -90,7 +100,7 @@ export default function CircleScreen() {
             </View>
 
                 <View style={[styles.label, styles.alignment]}>
-                    <View>
+                    <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'red', marginHorizontal: 5}}/> 
                             <Text>Predatismo</Text>
@@ -100,14 +110,14 @@ export default function CircleScreen() {
                             <Text>Competição</Text>
                         </View>
                     </View>
-                    <View>
+                    <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
-                            <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
+                            <View style={{width: 10, height: 10, backgroundColor: 'green', marginHorizontal: 5}}/> 
                             <Text>Mutualismo</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
-                            <View style={{width: 10, height: 10, backgroundColor: 'red', marginHorizontal: 5}}/> 
-                            <Text>Predatismo</Text>
+                            <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
+                            <Text>Comensalismo</Text>
                         </View>
                     </View>
                 </View>
@@ -173,7 +183,8 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         textAlign: 'center',
-        color: 'white'
+        color: 'white',
+        textAlign: 'left'
     },
 
     alignment: {
@@ -186,7 +197,6 @@ const styles = StyleSheet.create({
         padding: '2%',
         backgroundColor: 'rgba(256, 256, 256, 0.8)',
         borderRadius: 10,
-        flexDirection: 'row',
         marginVertical: '5%'
     }
 });

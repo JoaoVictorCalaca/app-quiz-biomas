@@ -1,7 +1,7 @@
 import { appColors } from "@/src/util/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-
+import React from "react";
 export default function Layout() {
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: 'white', tabBarStyle: { backgroundColor: appColors.defaultBlack }, headerShown: false }}>
