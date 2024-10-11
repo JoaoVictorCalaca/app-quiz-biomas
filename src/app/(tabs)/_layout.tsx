@@ -12,7 +12,7 @@ export default function Layout() {
         }}
       />
 
-      <Tabs.Screen name="learnFolder"
+      <Tabs.Screen name="learn"
         options={{
           title: 'Learn',
           tabBarIcon: ({ color }) => <Ionicons name="school" color={color} size={28} />,
