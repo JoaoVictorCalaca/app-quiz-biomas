@@ -2,6 +2,7 @@ import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View }
 import Arrow from './Arrow';
 import { images } from '../data/PantanalData';
 import { useRef, useState } from "react";
+import { appColors } from "../util/colors";
 
 export default function PantanalCircleScreen() {
     const { width, height } = Dimensions.get('window');
@@ -169,8 +170,9 @@ const styles = StyleSheet.create({
     textBox: {
         padding: '5%',
         width: '100%',
-        backgroundColor: 'rgba(14, 1, 51, 0.8)',
-        borderRadius: 10
+        backgroundColor: appColors.secondaryBlue,
+        borderRadius: 10,
+        gap: 20
     },
 
     title: {
@@ -198,5 +200,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(256, 256, 256, 0.8)',
         borderRadius: 10,
         marginVertical: '5%'
+    },
+
+    boxImg: {
+        width: '100%',
+        borderRadius: 20
     }
 });
