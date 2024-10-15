@@ -32,6 +32,18 @@ export default function Index() {
                     <AntDesign name="rightcircle" size={24} color="white" />
                 </TouchableOpacity>
             </Link>
+            <Link href="learn/arqBiomas/caatinga" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Caatinga</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
+            <Link href="learn/arqBiomas/amazonia" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Amazônia</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
         </View>
     )
 }

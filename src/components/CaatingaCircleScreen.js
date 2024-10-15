@@ -1,6 +1,6 @@
 import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Arrow from './Arrow';
-import { images } from '../data/InitialDataPampa';
+import { images } from '../data/initialDataCaatinga';
 import { useRef, useState } from "react";
 
 export default function CerradoCircleScreen() {
@@ -103,21 +103,21 @@ export default function CerradoCircleScreen() {
                     <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'red', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Predatismo</Text>
+                            <Text style={{color:'white'}}>Predatismo</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'orange', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Competição</Text>
+                            <Text style={{color:'white'}}>Competição</Text>
                         </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'green', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Mutualismo</Text>
+                            <Text style={{color:'white'}}>Mutualismo</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Comensalismo</Text>
+                            <Text style={{color:'white'}}>Comensalismo</Text>
                         </View>
                     </View>
                 </View>

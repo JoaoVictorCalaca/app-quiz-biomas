@@ -2,8 +2,8 @@ import { View, Text, FlatList,StyleSheet,Image, ScrollView } from 'react-native'
 import { appColors } from "@/src/util/colors";
 import React from 'react'
 import {dataBiomas} from '../../../../data/dataBiomas'
-import CircleScreen from '../../../../components/MataCircleScreen'
-export default function mataAtlantica() {
+import CircleScreen from '../../../../components/CaatingaCircleScreen'
+export default function Cerrado() {
 
   const styles = StyleSheet.create({
     container: {
@@ -47,7 +47,7 @@ export default function mataAtlantica() {
   });
 
   const biomas = dataBiomas()
-  const bioma = biomas[2]
+  const bioma = biomas[5]
   console.log(bioma)
   return (
       <ScrollView style={[styles.container, {padding: 5}]}>
@@ -59,7 +59,7 @@ export default function mataAtlantica() {
   
         <View style={styles.imageContainer}>
           <Image 
-            source={require('../../../../images/mataAtlantica/mata.jpg') } 
+            source={require('../../../../images/caatinga/caatinga.jpg') } 
             style={styles.image}
             resizeMode="cover"
           />
@@ -78,4 +78,4 @@ export default function mataAtlantica() {
       </ScrollView>
 
   )
-} 
+}

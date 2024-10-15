@@ -103,21 +103,21 @@ export default function PantanalCircleScreen() {
                     <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'red', marginHorizontal: 5}}/> 
-                            <Text>Predatismo</Text>
-                        </View>
+                            <Text style={{color: 'white'}}>Predatismo</Text>
+                        </View >
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'orange', marginHorizontal: 5}}/> 
-                            <Text>Competição</Text>
+                            <Text style={{color: 'white'}}>Competição</Text>
                         </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'green', marginHorizontal: 5}}/> 
-                            <Text>Mutualismo</Text>
+                            <Text style={{color: 'white'}}>Mutualismo</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
-                            <Text>Comensalismo</Text>
+                            <Text style={{color: 'white'}}>Comensalismo</Text>
                         </View>
                     </View>
                 </View>
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     label: {
         width: '70%',
         padding: '2%',
-        backgroundColor: 'rgba(256, 256, 256, 0.8)',
+        backgroundColor: 'rgba(14, 1, 51, 0.8)',
         borderRadius: 10,
         marginVertical: '5%'
     }
