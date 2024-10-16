@@ -21,7 +21,6 @@ export default function Cerrado() {
       shadowRadius: 10,
       elevation: 5,
     },
-    
     title: {
       fontSize: 18,
       fontWeight: 'bold',
