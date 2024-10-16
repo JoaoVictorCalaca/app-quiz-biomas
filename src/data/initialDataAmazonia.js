@@ -1,39 +1,51 @@
 export const images = (radius) => {
     return [
         {
-            id: 1, source: require('../images/caatinga/cobra-cipo.jpg'), relatedTo: [4, 2], arrowAngulation: [-180, 120], arrowStart: 'LeftSide',
-            arrowSize: [(radius * 1.14), (radius * 1.35)], interactions: ['predatism', 'competition'], animal: 'Jacaré',
-            description: 'Jacaré também chamado aligator, são crocodilianos da família Alligatoridae, semelhantes aos crocodilos, dos quais se distinguem pela cabeça mais curta e larga, pela presença de membranas interdigitais (semelhante barbatana) nos polegares das patas traseiras e, com relação à dentição onde o quarto dente canino da mandíbula inferior encaixa em um furo da mandíbula superior, enquanto que nos crocodilos sobressai para fora, quando têm a boca fechada.[3] O tamanho de um jacaré pode variar de 1,2 metros (jacaré-anão) até 5,5 metros (jacaré-açu), podendo pesar de seis a seiscentos quilos. Os jacarés habitam as Américas, tendo desaparecido da Europa na era Plioceno.[carece de fontes] Na América do Norte, ocorre, somente, o gênero Alligator.'
+            id: 1, source: require('../images/amazonia/onca.jpg'), relatedTo: [3, 2], arrowAngulation: [-210, 120], arrowStart: 'LeftSide',
+            arrowSize: [(radius * 1.5), (radius * 1)], interactions: ['predatism', 'competition'], animal: 'Onça Pintada',
+            description: `\nA onça-pintada, um dos principais predadores da Amazônia, compete com a harpia por presas como pequenos mamíferos. Ela também pode predar o veado-mateiro
+\nA onça-pintada é o maior felino das Américas e um dos principais predadores da Amazônia. Ela é conhecida por sua força, habilidade de natação e habilidade em caçar desde pequenos mamíferos até grandes herbívoros. Sua presença é essencial para manter o equilíbrio ecológico ao controlar as populações de presas.
+`
         },
 
         {
-            id: 2, source: require('../images/caatinga/coruja-buraqueira.jpg'), relatedTo: [4, 6, 5, 1,3], arrowAngulation: [-90, -150,-60,240,180], arrowStart: 'LeftSide',
-            arrowSize: [(radius * 1.35),(radius * 1.35),(radius * 1.35),(radius * 1.35), (radius * 1.14)], interactions: ['predatism', 'predatism','predatism','predatism','competition'], animal: 'Onça',
-            description: 'A onça-pintada é o maior felino das Américas, podendo pesar até 100 kg. Ela é uma excelente caçadora, conhecida por sua força e habilidade em emboscar suas presas. Habita florestas densas, áreas de savana e zonas alagadas, o que inclui o caatinga. Sua dieta é muito diversificada e inclui mamíferos de grande porte, como capivaras, veados, tatus, além de jacarés e até peixes. É uma predadora solitária e territorial, ocupando grandes áreas em busca de alimento. A onça-pintada é fundamental para manter o equilíbrio populacional das espécies no Cerrado, controlando as populações de herbívoros..'
+            id: 2, source: require('../images/amazonia/harpia.jpg'), relatedTo: [4, 1,], arrowAngulation: [-150, -60], arrowStart: 'LeftSide',
+            arrowSize: [(radius * 1.35),(radius * 0.61)], interactions: ['predatism','competition'], animal: 'Harpia',
+            description: `\nA harpia é uma ave de rapina que predomina no topo da cadeia alimentar, competindo com a onça-pintada pelo mesmo nicho ecológico. Ela pode se alimentar de preguiças.
+\nA harpia é uma das maiores aves de rapina do mundo e vive nas florestas tropicais da América Central e do Sul, incluindo a Amazônia. Com suas garras poderosas, ela caça preguiças, macacos e outras aves. É um símbolo de poder e um predador de topo na região.
+`
         },
 
         {
-            id: 3, source: require('../images/caatinga/gamba.jpg'), relatedTo: [5, 2], arrowAngulation: [-90, 0], arrowStart: 'RightSide',
-            arrowSize: [(radius * 0.57), (radius * 0.57)], interactions: ['predatism', 'competition'], animal: 'Lobo',
-            description: 'O lobo-guará é o maior canídeo da América do Sul e uma espécie emblemática do Cerrado. Com suas longas pernas e porte elegante, ele é adaptado para correr em campos abertos. Apesar de seu tamanho impressionante, pesando cerca de 20-30 kg, o lobo-guará é um predador oportunista e onívoro, com uma dieta variada que inclui pequenos mamíferos, como roedores, aves, insetos, e especialmente frutos, como a lobeira, que é crucial para sua alimentação. O lobo-guará é solitário e evita grandes confrontos, preferindo caçar à noite. Ele tem um papel importante na dispersão de sementes de frutos, contribuindo para a manutenção do bioma do Cerrado.'
+            id: 3, source: require('../images/amazonia/veado-mateiro.jpg'), relatedTo: [6], arrowAngulation: [-60], arrowStart: 'RightSide',
+            arrowSize: [(radius * 1.77)], interactions: ['comensalism'], animal: 'Veado Mateiro',
+            description: `\nO veado-mateiro pode ter uma relação de comensalismo com a bromélia ao usar plantas próximas para proteção sem prejudicá-las. Também pode ser presa da onça-pintada.
+\nO veado-mateiro é um cervídeo encontrado nas florestas da Amazônia. Ele se alimenta de folhas, frutos e brotos. Prefere viver em áreas de vegetação densa, onde pode se esconder de predadores como a onça-pintada. Sua capacidade de adaptação e movimentação discreta entre as plantas faz dele um comensal de várias espécies.
+`
         },
 
         {
-            id: 4, source: require('../images/caatinga/mandacaru.jpg'), relatedTo: [6], arrowAngulation: [-30], arrowStart: 'RightSide',
-            arrowSize: [(radius * 1.14)], interactions: ['competition'], animal: 'Capivara',
-            description: 'A capivara é o maior roedor do mundo, pesando entre 35 e 70 kg. Ela vive em grandes grupos sociais, geralmente próximos a corpos d´cágua, o que inclui rios, lagoas e áreas alagadas do Cerrado. Herbívora, a capivara se alimenta de gramíneas, plantas aquáticas e frutas. É um animal muito adaptado ao ambiente aquático, nadando com facilidade para fugir de predadores como a onça-pintada e o jacaré. Além de ser presa de grandes predadores, a capivara tem uma relação de mutualismo com aves, que frequentemente removem parasitas de sua pele. Sua presença ajuda a moldar a vegetação ao redor de rios e lagos, afetando a estrutura do ecossistema local.'
+            id: 4, source: require('../images/amazonia/preguica.jpg'), relatedTo: [6,5], arrowAngulation: [-30,-60], arrowStart: 'RightSide',
+            arrowSize: [(radius * 1.5),(radius * 1)], interactions: ['mutualism','comensalism'], animal: 'Preguiça',
+            description: `\nA preguiça tem uma relação de mutualismo com as bromélias, que crescem em seus pelos, abrigando pequenos insetos e algas. Ela, por sua vez, pode ser predada pela harpia
+\nA preguiça-de-três-dedos é um mamífero conhecido por sua lentidão e por passar a maior parte do tempo em árvores, onde se alimenta de folhas. Sua relação com outros seres vivos, como algas e pequenos insetos que habitam seus pelos, demonstra como ela se adapta ao ambiente. Além disso, suas características lentas a tornam uma presa fácil para grandes predadores.
+`
         },
 
         {
-            id: 5, source: require('../images/caatinga/tatu-peba.jpg'), relatedTo: [], arrowAngulation: [], arrowStart: 'RightSide',
-            arrowSize: [], interactions: [], animal: 'Tatu',
-            description: 'O tatu-canastra é o maior dos tatus e um dos animais mais impressionantes do Cerrado, podendo atingir até 1,5 metro de comprimento e pesar 60 kg. Ele tem uma carapaça rígida que o protege de predadores, como a onça-pintada. O tatu-canastra é um excelente escavador, usando suas grandes garras para cavar tocas profundas e para se alimentar, principalmente de formigas e cupins, que são sua principal fonte de alimento. Embora seja um animal solitário e de hábitos noturnos, o tatu-canastra é essencial para o ecossistema, pois suas tocas oferecem abrigo para várias outras espécies menores.'
+            id: 5, source: require('../images/amazonia/garca.jpg'), relatedTo: [3,4], arrowAngulation: [120,0], arrowStart: 'RightSide',
+            arrowSize: [(radius * 0.57),(radius * 0.57)], interactions: ['comensalism','mutualism'], animal: 'Garça',
+            description: `\nA garça pode estabelecer uma relação de comensalismo ao se beneficiar de insetos e pequenos animais que surgem enquanto o veado-mateiro se move pela vegetação. Ela também pode ter uma relação de mutualismo com a preguiça ao retirar parasitas de seus pelos.
+\nA garça-branca é uma ave de grande porte encontrada em áreas alagadas da Amazônia. Ela se alimenta principalmente de pequenos peixes, insetos e anfíbios, caçando pacientemente nas margens dos rios. Seu comportamento tranquilo e observador permite que ela se beneficie de comensalismo com outros animais, como o veado-mateiro, ao aproveitar o deslocamento de presas.
+`
         },
 
         {
-            id: 6, source: require('../images/caatinga/veado-catingueiro.jpg'), relatedTo: [4], arrowAngulation: [150], arrowStart: 'LeftSide',
-            arrowSize: [(radius * 0.57)], interactions: ['competition'], animal: 'Veado',
-            description: 'O veado-catingueiro é um pequeno cervídeo que habita áreas abertas e de mata no Cerrado, preferindo regiões de vegetação mais baixa, onde pode se esconder de predadores. Ele pesa cerca de 20-25 kg e se alimenta principalmente de gramíneas, folhas e frutos. Este animal é ágil e está sempre em alerta para escapar de predadores como a onça-pintada e o lobo-guará. Embora herbívoro, o veado tem grande importância no ecossistema, dispersando sementes e contribuindo para a regeneração da vegetação.'
+            id: 6, source: require('../images/amazonia/bromelia.jpg'), relatedTo: [4,5,3], arrowAngulation: [150,180,120], arrowStart: 'LeftSide',
+            arrowSize: [(radius * 1.2),(radius * 0.6),(radius * 1.41)], interactions: ['mutualism','mutualism','comensalism'], animal: 'bromelia',
+            description: `\nAs bromélias proporcionam abrigo para a preguiça e a garça (mutualismo) e são usadas pelo veado-mateiro para proteção (comensalismo).
+\nAs bromélias são plantas epífitas que crescem sobre árvores na floresta amazônica, onde acumulam água e criam micro-habitats para vários pequenos organismos. Elas são uma parte vital do ecossistema, oferecendo abrigo e água para muitos animais, como a preguiça e a garça, além de serem parte de relações de mutualismo.
+`
         },
     ]
 }

@@ -73,6 +73,7 @@ export default function mataAtlantica() {
           />
         </View>
         <View style={styles.section}>
+          <Text style={styles.title}>FAUNA E FLORA </Text>
           <CircleScreen/>
         </View>
       </ScrollView>

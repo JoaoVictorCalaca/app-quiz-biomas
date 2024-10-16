@@ -59,7 +59,7 @@ export default function Cerrado() {
   
         <View style={styles.imageContainer}>
           <Image 
-            source={require('../../../../images/caatinga/caatinga.jpg') } 
+            source={require('../../../../images/amazonia/amazonia.jpg') } 
             style={styles.image}
             resizeMode="cover"
           />
@@ -73,6 +73,7 @@ export default function Cerrado() {
           />
         </View>
         <View style={styles.section}>
+          <Text style={styles.title}>FAUNA E FLORA </Text>
           <CircleScreen/>
         </View>
       </ScrollView>
