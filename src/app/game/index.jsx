@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, Vibration, Modal, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { appColors } from '@/src/util/colors'
-import { quizData } from '@/src/util/quizData'
+import { appColors } from '@/src/data/colors'
+import { quizData } from '@/src/data/quizData'
 import { router } from 'expo-router'
 import { Audio } from 'expo-av'
 
@@ -38,17 +38,36 @@ const index = () => {
     );
     setSound(sound);
     await sound.playAsync();
+
+    sound.setOnPlaybackStatusUpdate(async (status) => {
+      if (status.didJustFinish) {
+        await sound.unloadAsync();
+      }
+    });
+  }
+
+  const playWrongSound = async () => {
+    const { sound } = await Audio.Sound.createAsync(
+      require('../../../assets/sounds/errado.mp3')
+    );
+    setSound(sound);
+    await sound.playAsync();
+
+    sound.setOnPlaybackStatusUpdate(async (status) => {
+      if (status.didJustFinish) {
+        await sound.unloadAsync();
+      }
+    });
   }
 
   const handleAnswer = (option) => {
-    setSelectedAnswer(option)
-    handleConfirmAnswer()
+    setSelectedAnswer(option);
+    handleConfirmAnswer(option);
   }
 
   const handleNextQuestion = () => {
     if (selectedAnswer === currentQuestion.correctAnswer) {
       setScore(score + 1)
-      playCorrectSound()
       Vibration.vibrate(100)
     }
 
@@ -85,7 +104,7 @@ const index = () => {
     return styles.bntAnswer
   }
 
-  const handleConfirmAnswer = () => {
+  const handleConfirmAnswer = (option) => {
     Alert.alert(
       "Confirmação",
       `Você deseja confirmar sua resposta?`,
@@ -93,11 +112,18 @@ const index = () => {
         {
           text: "Não",
           style: "cancel",
-          onPress: () => { setHasAnswered(false); Vibration.vibrate([100, 300]) }
+          onPress: () => { 
+            setHasAnswered(false);
+            Vibration.vibrate([100, 300]);
+          }
         },
         {
           text: "Sim!",
-          onPress: () => { setHasAnswered(true); Vibration.vibrate(300) }
+          onPress: () => { 
+            setHasAnswered(true);
+            Vibration.vibrate(300);
+            option === currentQuestion.correctAnswer ? playCorrectSound() : playWrongSound();
+          }
         },
       ],
       { cancelable: false }

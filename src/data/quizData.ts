@@ -1,20 +1,20 @@
 export const quizData = [
   {
-    question: "Qual bioma ocupa a maior parte do território brasileiro?",
-    options: ["Amazônia", "Pantanal", "Mata Atlântica", "Pampa"],
-    correctAnswer: "Amazônia",
-  },
-
-  {
     question: "Qual bioma é caracterizado por vegetação xerófila e clima semiárido?",
     options: ["Cerrado", "Pantanal", "Mata Atlântica", "Caatinga"],
     correctAnswer: "Caatinga",
   },
 
   {
-    question: "Qual bioma é conhecido por sua grande biodiversidade aquática?",
-    options: ["Pantanal", "Amazônia", "Cerrado", "Pampa"],
-    correctAnswer: "Pantanal",
+    question: "Qual desses animais é nativo da Mata Atlântica?",
+    options: ["Lobo-guará", "Onça-pintada", "Mico-leão-dourado", "Tamanduá-bandeira"],
+    correctAnswer: "Mico-leão-dourado",
+  },
+
+  {
+    question: "Qual é o principal fator de ameaça ao bioma Pantanal?",
+    options: ["Desmatamento", "Agronegócio", "Turismo", "Urbanização"],
+    correctAnswer: "Agronegócio",
   },
 
   {
@@ -24,15 +24,15 @@ export const quizData = [
   },
 
   {
-    question: "Qual bioma é conhecido por suas planícies e campos naturais?",
-    options: ["Pampa", "Caatinga", "Pantanal", "Cerrado"],
-    correctAnswer: "Pampa",
+    question: "Qual é a principal ameaça à biodiversidade da Amazônia?",
+    options: ["Desmatamento", "Turismo sustentável", "Agricultura orgânica", "Reflorestamento"],
+    correctAnswer: "Desmatamento",
   },
 
   {
-    question: "Em qual bioma predominam espécies adaptadas a altas temperaturas e à seca?",
-    options: ["Caatinga", "Cerrado", "Pantanal", "Pampa"],
-    correctAnswer: "Caatinga",
+    question: "Qual bioma brasileiro é encontrado principalmente na região Sul, com predominância de campos e clima subtropical?",
+    options: ["Mata Atlântica", "Caatinga", "Pampa", "Amazônia"],
+    correctAnswer: "Pampa",
   },
 
   {
@@ -41,10 +41,11 @@ export const quizData = [
     correctAnswer: "Cerrado",
   },
 
+
   {
-    question: "Qual bioma brasileiro tem a maior variedade de ecossistemas e é responsável pela maior produção de oxigênio no planeta?",
-    options: ["Mata Atlântica", "Amazônia", "Cerrado", "Pantanal"],
-    correctAnswer: "Amazônia",
+    question: "Qual bioma é conhecido por sua vegetação adaptada a longos períodos de seca e é o segundo maior bioma do Brasil?",
+    options: ["Cerrado", "Caatinga", "Mata Atlântica", "Amazônia"],
+    correctAnswer: "Cerrado",
   },
 
   {

@@ -1,8 +1,9 @@
+import { appColors } from "@/src/data/colors";
 import { Stack } from "expo-router";
 
 export default function layout() {
     return (
-        <Stack>
+        <Stack screenOptions={{ headerStyle: { backgroundColor: appColors.defaultBlack}, headerTintColor: appColors.defaultWhite }}>
             <Stack.Screen name="pantanal" options={{
                 title: 'Pantanal',
             }}/>

@@ -1,4 +1,4 @@
-import { appColors } from "@/src/util/colors";
+import { appColors } from "@/src/data/colors";
 import { Link } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';

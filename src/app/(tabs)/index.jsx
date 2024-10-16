@@ -1,5 +1,5 @@
 import { StyleSheet, Text, Touchable, View, TouchableOpacity, StatusBar, ScrollView } from "react-native";
-import { appColors } from "../../util/colors";
+import { appColors } from "../../data/colors";
 import { Link } from "expo-router";
 
 export default function Index() {
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    justifyContent: 'center',
     backgroundColor: appColors.defaultBlue,
     paddingHorizontal: 25,
     paddingVertical: 80,

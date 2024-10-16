@@ -1,4 +1,4 @@
-import { appColors } from "@/src/util/colors";
+import { appColors } from "@/src/data/colors";
 import { Stack } from "expo-router";
 import React from "react";
 export default function Layout() {

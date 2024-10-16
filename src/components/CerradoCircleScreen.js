@@ -2,7 +2,7 @@ import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View }
 import Arrow from './Arrow';
 import { images } from '../data/initialDataCerrado';
 import { useRef, useState } from "react";
-import { appColors } from "../util/colors";
+import { appColors } from "../data/colors";
 
 export default function CerradoCircleScreen() {
     const { width, height } = Dimensions.get('window');

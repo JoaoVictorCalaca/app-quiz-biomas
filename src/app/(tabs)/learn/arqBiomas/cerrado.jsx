@@ -1,7 +1,7 @@
-import { View, Text, FlatList,StyleSheet,Image, ScrollView } from 'react-native'
-import { appColors } from "@/src/util/colors";
+import { View, Text, FlatList, StyleSheet, Image, ScrollView } from 'react-native'
+import { appColors } from "@/src/data/colors";
 import React from 'react'
-import {dataBiomas} from '../../../../data/dataBiomas'
+import { dataBiomas } from '../../../../data/dataBiomas'
 import CircleScreen from '../../../../components/CerradoCircleScreen'
 export default function Cerrado() {
 
@@ -37,13 +37,13 @@ export default function Cerrado() {
       marginBottom: 8,
     },
     imageContainer: {
-      alignItems: 'center', 
+      alignItems: 'center',
       marginBottom: 24,
     },
     image: {
-      width: '80%', 
-      height: 200, 
-      borderRadius: 8, 
+      width: '80%',
+      height: 200,
+      borderRadius: 8,
     },
   });
 
@@ -51,32 +51,30 @@ export default function Cerrado() {
   const bioma = biomas[1]
   console.log(bioma)
   return (
-      <ScrollView style={[styles.container, {padding: 5}]}>
-        
-        <View style={styles.section}>
-          <Text style={styles.title}>{bioma.title}</Text>
-          <Text style={styles.description}>{bioma.text}</Text>
-        </View>
-  
-        <View style={styles.imageContainer}>
-          <Image 
-            source={require('../../../../images/cerrado/cerrado.jpg') } 
-            style={styles.image}
-            resizeMode="cover"
-          />
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.title}>CARACTERÍSTICAS</Text>
-          <FlatList 
-            data={bioma.caracteristicas}
-            renderItem={({ item }) => <Text style={styles.item}>- {item}</Text>}
-            keyExtractor={(item, index) => index.toString()}
-          />
-        </View>
-        <View style={styles.section}>
-          <CircleScreen/>
-        </View>
-      </ScrollView>
+    <ScrollView style={[styles.container, { padding: 5 }]}>
+
+      <View style={styles.section}>
+        <Text style={styles.title}>{bioma.title}</Text>
+        <Text style={styles.description}>{bioma.text}</Text>
+      </View>
+
+      <View style={styles.imageContainer}>
+        <Image
+          source={require('../../../../images/cerrado/cerrado.jpg')}
+          style={styles.image}
+          resizeMode="cover"
+        />
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.title}>CARACTERÍSTICAS</Text>
+        {bioma.caracteristicas.map((item, index) => (
+          <Text key={index.toString()} style={styles.item}>- {item}</Text>
+        ))}
+      </View>
+      <View style={styles.section}>
+        <CircleScreen />
+      </View>
+    </ScrollView>
 
   )
 }
