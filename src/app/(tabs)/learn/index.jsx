@@ -8,9 +8,39 @@ export default function Index() {
         <View style={styles.container}>
             <Text style={styles.h1}>Aprenda um pouco sobre a fauna e flora de cada bioma!</Text>
 
-            <Link href="learn/pantanal" asChild>
+            <Link href="learn/arqBiomas/pantanal" asChild>
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.text}>Pantanal</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
+            <Link href="learn/arqBiomas/cerrado" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Cerrado</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
+            <Link href="learn/arqBiomas/pampa" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Pampa</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
+            <Link href="learn/arqBiomas/mataAtlantica" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Mata Atlântica</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
+            <Link href="learn/arqBiomas/caatinga" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Caatinga</Text>
+                    <AntDesign name="rightcircle" size={24} color="white" />
+                </TouchableOpacity>
+            </Link>
+            <Link href="learn/arqBiomas/amazonia" asChild>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>Amazônia</Text>
                     <AntDesign name="rightcircle" size={24} color="white" />
                 </TouchableOpacity>
             </Link>

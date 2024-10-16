@@ -1,10 +1,10 @@
 import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Arrow from './Arrow';
-import { images } from '../data/PantanalData';
+import { images } from '../data/initialDataCaatinga';
 import { useRef, useState } from "react";
 import { appColors } from "../util/colors";
 
-export default function PantanalCircleScreen() {
+export default function CerradoCircleScreen() {
     const { width, height } = Dimensions.get('window');
     const circleSize = Math.min(width, height) * 0.9;
     const radius = circleSize / 2;
@@ -104,21 +104,21 @@ export default function PantanalCircleScreen() {
                     <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'red', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Predatismo</Text>
-                        </View >
+                            <Text style={{color:'white'}}>Predatismo</Text>
+                        </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'orange', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Competição</Text>
+                            <Text style={{color:'white'}}>Competição</Text>
                         </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'green', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Mutualismo</Text>
+                            <Text style={{color:'white'}}>Mutualismo</Text>
                         </View>
                         <View style={[styles.alignment, {flexDirection: 'row'}]}>
                             <View style={{width: 10, height: 10, backgroundColor: 'blue', marginHorizontal: 5}}/> 
-                            <Text style={{color: 'white'}}>Comensalismo</Text>
+                            <Text style={{color:'white'}}>Comensalismo</Text>
                         </View>
                     </View>
                 </View>
@@ -170,9 +170,8 @@ const styles = StyleSheet.create({
     textBox: {
         padding: '5%',
         width: '100%',
-        backgroundColor: appColors.secondaryBlue,
-        borderRadius: 10,
-        gap: 20
+        backgroundColor: 'rgba(14, 1, 51, 0.8)',
+        borderRadius: 10
     },
 
     title: {
@@ -200,10 +199,5 @@ const styles = StyleSheet.create({
         backgroundColor: appColors.quaternaryBlue,
         borderRadius: 10,
         marginVertical: '5%'
-    },
-
-    boxImg: {
-        width: '100%',
-        borderRadius: 20
     }
 });
