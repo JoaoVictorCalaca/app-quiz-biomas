@@ -104,6 +104,16 @@ const index = () => {
     );
   }
 
+  const goToHomeScreen = () => {
+    setScore(0)
+    setGameOver(false)
+    setHasAnswered(false)
+    setSelectedAnswer(null)
+    setQuestionIndex(0)
+
+    router.push('/(tabs)')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.h1}>🎯 Pergunta {questionIndex + 1} / {quizData.length}</Text>
@@ -146,7 +156,7 @@ const index = () => {
               <Text style={[styles.h1, { fontSize: 40 }]}>Você acertou <Text style={[styles.answerMarkedText, { fontSize: 40 }]}>{animatedScore}/{quizData.length}</Text> perguntas!</Text>
             </View>
 
-            <TouchableOpacity onPress={() => router.push('/(tabs)')} style={[styles.bntAnswer, styles.correctAnswer]}>
+            <TouchableOpacity onPress={goToHomeScreen} style={[styles.bntAnswer, styles.correctAnswer]}>
               <Text style={[styles.h1, { textAlign: 'center' }]}>Voltar ao início</Text>
             </TouchableOpacity>
           </View>

@@ -25,14 +25,15 @@ export default function Cerrado() {
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: 12,
+      color: '#fff',
     },
     description: {
       fontSize: 16,
-      color: '#333',
+      color: '#fff',
     },
     item: {
       fontSize: 16,
-      color: '#555',
+      color: '#fff',
       marginBottom: 8,
     },
     imageContainer: {
@@ -59,7 +60,7 @@ export default function Cerrado() {
   
         <View style={styles.imageContainer}>
           <Image 
-            source={require('../../../../images/caatinga/caatinga.jpg') } 
+            source={require('../../../../images/amazonia/amazonia.jpeg') } 
             style={styles.image}
             resizeMode="cover"
           />

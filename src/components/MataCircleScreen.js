@@ -2,6 +2,7 @@ import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View }
 import Arrow from './Arrow';
 import { images } from '../data/initialDataMataAtlantica';
 import { useRef, useState } from "react";
+import { appColors } from "../util/colors";
 
 export default function CerradoCircleScreen() {
     const { width, height } = Dimensions.get('window');
@@ -195,7 +196,7 @@ const styles = StyleSheet.create({
     label: {
         width: '70%',
         padding: '2%',
-        backgroundColor: 'rgba(14, 1, 51, 0.8)',
+        backgroundColor: appColors.quaternaryBlue,
         borderRadius: 10,
         marginVertical: '5%'
     }

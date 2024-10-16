@@ -1,39 +1,42 @@
 export const images = (radius) => {
     return [
+    
         {
-            id: 1, source: require('../images/caatinga/cobra-cipo.jpg'), relatedTo: [4, 2], arrowAngulation: [-180, 120], arrowStart: 'LeftSide',
-            arrowSize: [(radius * 1.14), (radius * 1.35)], interactions: ['predatism', 'competition'], animal: 'Jacaré',
-            description: 'Jacaré também chamado aligator, são crocodilianos da família Alligatoridae, semelhantes aos crocodilos, dos quais se distinguem pela cabeça mais curta e larga, pela presença de membranas interdigitais (semelhante barbatana) nos polegares das patas traseiras e, com relação à dentição onde o quarto dente canino da mandíbula inferior encaixa em um furo da mandíbula superior, enquanto que nos crocodilos sobressai para fora, quando têm a boca fechada.[3] O tamanho de um jacaré pode variar de 1,2 metros (jacaré-anão) até 5,5 metros (jacaré-açu), podendo pesar de seis a seiscentos quilos. Os jacarés habitam as Américas, tendo desaparecido da Europa na era Plioceno.[carece de fontes] Na América do Norte, ocorre, somente, o gênero Alligator.'
+            id: 1, source: require('../images/amazonia/formiga.png'), relatedTo: [3], arrowAngulation: [150], arrowStart: 'LeftSide',
+            arrowSize: [(radius * 1.14)], interactions: ['mutualism'], animal: 'Formiga Cortadeira',
+            description: '- Relação simbiótica com fungos Basidiomycota: As formigas cortadeiras mantêm uma relação mutualística com fungos do filo Basidiomycota, cultivando esses fungos em seus ninhos. As folhas que cortam servem de substrato para o crescimento dos fungos, que por sua vez, são a principal fonte de alimento das formigas.'
         },
 
         {
-            id: 2, source: require('../images/caatinga/coruja-buraqueira.jpg'), relatedTo: [4, 6, 5, 1,3], arrowAngulation: [-90, -150,-60,240,180], arrowStart: 'LeftSide',
-            arrowSize: [(radius * 1.35),(radius * 1.35),(radius * 1.35),(radius * 1.35), (radius * 1.14)], interactions: ['predatism', 'predatism','predatism','predatism','competition'], animal: 'Onça',
-            description: 'A onça-pintada é o maior felino das Américas, podendo pesar até 100 kg. Ela é uma excelente caçadora, conhecida por sua força e habilidade em emboscar suas presas. Habita florestas densas, áreas de savana e zonas alagadas, o que inclui o caatinga. Sua dieta é muito diversificada e inclui mamíferos de grande porte, como capivaras, veados, tatus, além de jacarés e até peixes. É uma predadora solitária e territorial, ocupando grandes áreas em busca de alimento. A onça-pintada é fundamental para manter o equilíbrio populacional das espécies no Cerrado, controlando as populações de herbívoros..'
+            id: 2, source: require('../images/amazonia/alga.jpg'), relatedTo: [4], arrowAngulation: [-150], arrowStart: 'LeftSide',
+            arrowSize: [(radius * 1.14)], interactions: ['comensalism'], animal: 'Alga Trichophilus',
+            description: '- Comensalismo com o bicho-preguiça: A alga Trichophilus cresce nos pelos do bicho-preguiça, beneficiando-se da umidade e nutrientes presentes no pelo sem prejudicar o animal. Essa relação é um exemplo de comensalismo, onde apenas a alga é beneficiada.'
         },
 
         {
-            id: 3, source: require('../images/caatinga/gamba.jpg'), relatedTo: [5, 2], arrowAngulation: [-90, 0], arrowStart: 'RightSide',
-            arrowSize: [(radius * 0.57), (radius * 0.57)], interactions: ['predatism', 'competition'], animal: 'Lobo',
-            description: 'O lobo-guará é o maior canídeo da América do Sul e uma espécie emblemática do Cerrado. Com suas longas pernas e porte elegante, ele é adaptado para correr em campos abertos. Apesar de seu tamanho impressionante, pesando cerca de 20-30 kg, o lobo-guará é um predador oportunista e onívoro, com uma dieta variada que inclui pequenos mamíferos, como roedores, aves, insetos, e especialmente frutos, como a lobeira, que é crucial para sua alimentação. O lobo-guará é solitário e evita grandes confrontos, preferindo caçar à noite. Ele tem um papel importante na dispersão de sementes de frutos, contribuindo para a manutenção do bioma do Cerrado.'
+            id: 3, source: require('../images/amazonia/fungo.jpg'), relatedTo: [1], arrowAngulation: [-30], arrowStart: 'RightSide',
+            arrowSize: [(radius * 1.14)], interactions: ['mutualism'], animal: 'Fungo Basidiomycota',
+            description: '- Relação simbiótica com formigas cortadeiras: Os fungos Basidiomycota são cultivados pelas formigas cortadeiras em uma relação mutualística. As formigas fornecem material vegetal, e os fungos crescem sobre ele, servindo de alimento para a colônia.'
         },
 
         {
-            id: 4, source: require('../images/caatinga/mandacaru.jpg'), relatedTo: [6], arrowAngulation: [-30], arrowStart: 'RightSide',
-            arrowSize: [(radius * 1.14)], interactions: ['competition'], animal: 'Capivara',
-            description: 'A capivara é o maior roedor do mundo, pesando entre 35 e 70 kg. Ela vive em grandes grupos sociais, geralmente próximos a corpos d´cágua, o que inclui rios, lagoas e áreas alagadas do Cerrado. Herbívora, a capivara se alimenta de gramíneas, plantas aquáticas e frutas. É um animal muito adaptado ao ambiente aquático, nadando com facilidade para fugir de predadores como a onça-pintada e o jacaré. Além de ser presa de grandes predadores, a capivara tem uma relação de mutualismo com aves, que frequentemente removem parasitas de sua pele. Sua presença ajuda a moldar a vegetação ao redor de rios e lagos, afetando a estrutura do ecossistema local.'
+            id: 4, source: require('../images/amazonia/preguica.png'), relatedTo: [2], arrowAngulation: [30], arrowStart: 'LeftSide',
+            arrowSize: [(radius * 1.14)], interactions: ['comensalism'], animal: 'Bicho preguiça',
+            description: '- Comensalismo com a alga Trichophilus: O bicho-preguiça abriga a alga Trichophilus em seus pelos, proporcionando um ambiente favorável para o crescimento da alga, que não prejudica o animal.'
+        },
+        
+        {
+            id: 5, source: require('../images/amazonia/jacare.jpeg'), relatedTo: [4, 6], arrowAngulation: [120,0], arrowStart: 'RightSide',
+            arrowSize: [(radius * 0.57), (radius * 0.57)], interactions: ['predatism', 'competition'], animal: 'Jacaré-açu',
+            description: '- Predação sobre o bicho-preguiça: O jacaré-açu, um dos maiores predadores da Amazônia, pode capturar e consumir bichos-preguiça que se aproximam de áreas aquáticas ou caem na água. \n \n' +
+            '- Competição com piranhas-vermelhas: O jacaré-açu pode competir com as piranhas-vermelhas por presas, como outros mamíferos ou aves que entram na água, embora normalmente os dois predadores tenham presas e nichos distintos.'
         },
 
         {
-            id: 5, source: require('../images/caatinga/tatu-peba.jpg'), relatedTo: [], arrowAngulation: [], arrowStart: 'RightSide',
-            arrowSize: [], interactions: [], animal: 'Tatu',
-            description: 'O tatu-canastra é o maior dos tatus e um dos animais mais impressionantes do Cerrado, podendo atingir até 1,5 metro de comprimento e pesar 60 kg. Ele tem uma carapaça rígida que o protege de predadores, como a onça-pintada. O tatu-canastra é um excelente escavador, usando suas grandes garras para cavar tocas profundas e para se alimentar, principalmente de formigas e cupins, que são sua principal fonte de alimento. Embora seja um animal solitário e de hábitos noturnos, o tatu-canastra é essencial para o ecossistema, pois suas tocas oferecem abrigo para várias outras espécies menores.'
-        },
-
-        {
-            id: 6, source: require('../images/caatinga/veado-catingueiro.jpg'), relatedTo: [4], arrowAngulation: [150], arrowStart: 'LeftSide',
-            arrowSize: [(radius * 0.57)], interactions: ['competition'], animal: 'Veado',
-            description: 'O veado-catingueiro é um pequeno cervídeo que habita áreas abertas e de mata no Cerrado, preferindo regiões de vegetação mais baixa, onde pode se esconder de predadores. Ele pesa cerca de 20-25 kg e se alimenta principalmente de gramíneas, folhas e frutos. Este animal é ágil e está sempre em alerta para escapar de predadores como a onça-pintada e o lobo-guará. Embora herbívoro, o veado tem grande importância no ecossistema, dispersando sementes e contribuindo para a regeneração da vegetação.'
+            id: 6, source: require('../images/amazonia/piranha.jpg'), relatedTo: [5, 4], arrowAngulation: [180, 150], arrowStart: 'RightSide',
+            arrowSize: [(radius * 0.57), (radius * 1.14)], interactions: ['competition', 'predatism'], animal: 'Piranha vermelha',
+            description: '- Predação sobre o bicho-preguiça: Piranhas-vermelhas podem atacar bichos-preguiça que caem na água, especialmente se estiverem feridos ou incapazes de nadar rapidamente. \n \n' +
+            '- Competição com o jacaré-açu: As piranhas competem com o jacaré-açu por presas menores ou animais que entram na água, como outros mamíferos e aves. Em situações de escassez de alimentos, pode haver competição direta por carcaças.'
         },
     ]
 }
